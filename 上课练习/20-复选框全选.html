@@ -33,9 +33,9 @@
 				<input type="checkbox"> 生物
 			</label>
 		</p>
-		<p>
+		<p class="checked">
 			<label>
-				<input id="chkAll" type="checkbox">全选
+				<input id="chkAll" type="checkbox"> <span>全选</span>
 			</label>
 			<label>
 				<input id="chkReverse" type="checkbox">反选
@@ -46,6 +46,7 @@
 		var oInput = document.querySelector('.lesson').querySelectorAll('input')
 		var oCheckedAll = document.querySelector('#chkAll')
 		var oChkReverse = document.querySelector('#chkReverse')
+		var all = document.querySelector('.checked label span')
 		// 全选状态和不全选状态
 		const changeChecked = () => {
 			let num = 0
@@ -54,15 +55,15 @@
 			})
 			oCheckedAll.checked = false
 			num === oInput.length && (oCheckedAll.checked = true)
-
 			console.log(num);
-			// checkedNum === oInput.length && oCheckedAll.checked
+			all.innerText = oCheckedAll.checked ? '全不选' : '全选'
 		}
 		// 全选
 		oCheckedAll.onclick = () => {
 			oInput.forEach((item) => {
 				item.checked = oCheckedAll.checked
 			})
+			changeChecked()
 		}
 		// 反选
 		oChkReverse.onclick = () => {
