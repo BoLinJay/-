@@ -1,0 +1,102 @@
+body, html {
+    height: 1000px;
+    background-color: #fcfcfc;
+}
+.title {
+    color: aqua;
+    height: 20px;
+    border-bottom: 2px solid gainsboro;
+}
+
+.form_main {
+    display: inline-block;
+    width: 100%;
+    color: #000;
+    padding: 0 5px;
+    }
+
+input {
+    width: 200px;
+    height: 30px;
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+}
+
+.form_main tr {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.form_main tr td:first-child,
+.form_main tr td:nth-child(3) {
+    width: 145px;
+}
+
+.form_main tr td:nth-child(3) {
+    padding-left: 130px;
+}
+
+textarea {
+    display: inline-block;
+    outline: none;
+    resize: none;
+    width: 677px;
+    height: 60px;
+    border: 1px solid gainsboro;
+}
+
+.Contact {
+    padding-top: 10px;
+    width: 100%;
+}
+.Contact_name  {
+    padding-top: 10px;
+    width: 150px;
+}
+.Contact_form {
+    padding-top: 5px;
+    width: 685px;
+}
+
+.Contact_form table tr,
+.Contact_form thead tr {
+    font-size: 12px;
+    color: #000;
+    height: 25px;
+    border-bottom: 1px solid #aaa9a9;
+}
+
+.Contact_form tr td:first-child {
+    padding-left: 10px;
+    width: 40px;
+    line-height: 40px;
+    background-color: #ebebeb;
+}
+.Contact_form tr td:nth-child(2) {
+    padding-left: 30px;
+    width: 125px;
+}
+.Contact_form tr td:nth-child(3) {
+    width: 115px;
+}
+.Contact_form tr td:nth-child(4),
+.Contact_form tr td:nth-child(5) {
+    width: 100px;
+}
+.Contact_form tr td:nth-child(6) {
+    width: 125px;
+}
+.Contact_form tr td:nth-child(7) {
+    width: 85px;
+}
+.Contact_form thead tr td {
+    font-size: 14px;
+    font-weight: 700;
+    color:#000;
+    padding-left: 15px;
+    background-color: #ebebeb;
+}
+
+.sort {
+    margin-top: 30px;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+
+</head>
+
+<body>
+	<fieldset id="">
+		<legend>transform-origin:原点</legend>
+		<ol>
+			<li>默认情况下，原点是元素的中心点</li>
+			<li>定义变换的原点位置</li>
+		</ol>
+		<style>
+			p {
+				width: 200px;
+				height: 200px;
+				margin: 10px 0;
+				background-color: orange;
+				transition: all 1s;
+				transform-origin: right bottom;
+			}
+
+			.box1.active {
+				transform: rotate(270deg);
+			}
+		</style>
+		<p class="box1">原点</p>
+		<p class="basic-box">参照物</p>
+		<script>
+			var oBox = document.querySelector('.box1');
+			oBox.addEventListener("click", function () {
+				this.classList.toggle("active");
+			});
+		</script>
+	</fieldset>
+</body>
+
+</html>

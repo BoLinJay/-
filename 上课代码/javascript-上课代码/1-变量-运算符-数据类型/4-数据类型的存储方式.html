@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+
+<body>
+	<script>
+		// 基础数据类型通过赋值copy数据
+		var x = 3;
+	
+		var y = x;
+	
+		y = 4;
+	
+		console.log(x);
+	</script>
+	<script>
+		// 引用数据类型通过赋值只能copy指针地址
+		var person1 = {
+			name: '黄小米',
+			age: 25
+		}
+		var person2 = person1;
+		
+		person2.age = 30;
+
+		// person1.age = ?
+		
+	</script>
+</body>
+
+</html>

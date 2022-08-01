@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+
+<body>
+	<form>
+		<!-- 布尔属性 -->
+		<p class="lesson">
+			<label>课程：</label>
+			<label>
+				<input type="checkbox"> 语文
+			</label>
+			<label>
+				<input type="checkbox"> 数学
+			</label>
+			<label>
+				<input type="checkbox"> 英语
+			</label>
+			<label>
+				<input type="checkbox"> 政治
+			</label>
+			<label>
+				<input type="checkbox"> 物理
+			</label>
+			<label>
+				<input type="checkbox"> 化学
+			</label>
+			<label>
+				<input type="checkbox"> 生物
+			</label>
+		</p>
+		<p>
+			<label>
+				<input id="chkAll" type="checkbox">全选
+			</label>
+			<label>
+				<input id="chkReverse" type="checkbox">反选
+			</label>
+		</p>
+	</form>
+	<script type="text/javascript">
+		var oInput = document.querySelector('.lesson').querySelectorAll('input')
+		var oCheckedAll = document.querySelector('#chkAll')
+		var oChkReverse = document.querySelector('#chkReverse')
+		// 全选状态和不全选状态
+		const changeChecked = () => {
+			let num = 0
+			oInput.forEach((item) => {
+				item.checked && num++
+			})
+			oCheckedAll.checked = false
+			num === oInput.length && (oCheckedAll.checked = true)
+
+			console.log(num);
+			// checkedNum === oInput.length && oCheckedAll.checked
+		}
+		// 全选
+		oCheckedAll.onclick = () => {
+			oInput.forEach((item) => {
+				item.checked = oCheckedAll.checked
+			})
+		}
+		// 反选
+		oChkReverse.onclick = () => {
+			oInput.forEach((item) => {
+				item.checked = !item.checked
+			})
+			changeChecked()
+		}
+		// 点击input监听
+		oInput.forEach((item) => {
+			item.onclick = () => {
+				changeChecked()
+			}
+		})
+	</script>
+</body>
+
+</html>

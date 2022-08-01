@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入自己的css  -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css">
+    <!-- animate -->
+    <link rel="stylesheet" href="./css/animate.css" />
+    <!-- swiper -->
+    <script src="./js/swiper-bundle.min.js"></script>
+    <!-- anime -->
+    <script src="./js/anime.min.js"></script>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <div class="header">
+        <div class="container">
+            <div class="header_main" id="header">
+                <div class="header_logo">
+                    <img src="./images/10001.png" alt="">
+                </div>
+                <ul class="header_tabbar">
+                    <li>首页</li>
+                    <li>产品</li>
+                    <li>服务</li>
+                    <li>新闻</li>
+                    <li>关于<span class="fa fa-angle-down"></span></li>
+                    <li>视频</li>
+                    <li>联系<span class="fa fa-angle-down"></span></li>
+                    <li><span class="fa fa-power-off"></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 轮播图 -->
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide img1"></div>
+            <div class="swiper-slide img2"></div>
+        </div>
+        <div class="swiper-scrollbar"></div>
+    </div>
+    <!-- 数量板块 -->
+    <div class="productor">
+        <div class="container">
+            <ul class="productor_main">
+                <li>
+                    <div class="number">
+                        <span id="num1">1</span>
+                        <span>+</span>
+                    </div>
+                    <div class="titlename">服务网站</div>
+                </li>
+                <li>
+                    <div class="number">
+                        <span id="num2"></span>
+                        <span>款</span>
+                    </div>
+                    <div class="titlename">建站产品</div>
+
+                </li>
+                <li>
+                    <div class="number">
+                        <span id="num3"></span>
+                        <span>年</span>
+                    </div>
+                    <div class="titlename">建站产品</div>
+                </li>
+                <li>
+                    <div class="number">
+                        <span id="num4">1</span>
+                        <span>+</span>
+                    </div>
+                    <div class="titlename">覆盖城市</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 服务板块 -->
+    <div class="service">
+        <div class="container">
+            <div class="component_title">
+                <div>服务</div>
+                <div>Best service</div>
+            </div>
+            <ul class="service_main" id="serviceDom">
+                <li id="service1" class="animated">
+                    <div class="service_img">
+                        <img src="./images/1571377527695.jpg" alt="">
+                        <div class="img_mask"></div>
+                    </div>
+                    <div class="service_text fl">
+                        <div>用户体验设计</div>
+                        <div>Customer Experience Design</div>
+                        <div>是已用户为中心的一种设计手段，已用户需求为目标而进行的设计。设计过程注重以用户为中心的体验</div>
+                        <span><a href="#">></a></span>
+                    </div>
+                </li>
+                <li id="service2" class="animated">
+                    <div class="service_img">
+                        <img src="./images/1571378570504.jpg" alt="">
+                        <div class="img_mask"></div>
+                    </div>
+                    <div class="service_text fl">
+                        <div>用户体验设计</div>
+                        <div>Customer Experience Design</div>
+                        <div>是已用户为中心的一种设计手段，已用户需求为目标而进行的设计。设计过程注重以用户为中心的体验</div>
+                        <span><a href="#">></a></span>
+                    </div>
+                </li>
+                <li id="service3" class="animated">
+                    <div class="service_img">
+                        <img src="./images/1571378965684.jpg" alt="">
+                        <div class="img_mask"></div>
+                    </div>
+                    <div class="service_text fl">
+                        <div>用户体验设计</div>
+                        <div>Customer Experience Design</div>
+                        <div>是已用户为中心的一种设计手段，已用户需求为目标而进行的设计。设计过程注重以用户为中心的体验</div>
+                        <span><a href="#">></a></span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 小手 -->
+    <div class="button">
+        <a href="#" class="fa fa-hand-o-left"></a>
+        <a href="#" class="fa fa-hand-o-right"></a>
+    </div>
+    <!-- 产品模块 -->
+    <div class=" product">
+        <div class="product_top">
+            <div class="component_title">
+                <div>产品</div>
+                <div>Best Product</div>
+            </div>
+            <ul class="product_tapbar">
+                <li><a href="#">全部</a></li>
+                <li><a href="#">空间导视</a></li>
+                <li><a href="#">公益传媒</a></li>
+                <li><a href="#">品牌制定</a></li>
+                <li><a href="#">产品包装</a></li>
+                <li><a href="#">MORE</a></li>
+            </ul>
+        </div>
+        <ul class="product_bottom">
+            <li>
+                <div class="item_img">
+                    <img src="./images/10008.jpg" alt="">
+                    <div class="product_mask"></div>
+                    <div class="item_icon">
+                        <div class="postimage">
+                            <span class="fa fa-link"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product_text">
+                    <div class="title">Port shares港口股份</div>
+                    <div class="subtitle">Port shares港口股份</div>
+                </div>
+            </li>
+            <li>
+                <div class="item_img">
+                    <img src="./images/10009.jpg" alt="">
+                    <div class="product_mask"></div>
+                    <div class="item_icon">
+                        <div class="postimage">
+                            <span class="fa fa-link"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product_text">
+                    <div class="title">Port shares港口股份</div>
+                    <div class="subtitle">Port shares港口股份</div>
+                </div>
+            </li>
+            <li>
+                <div class="item_img">
+                    <img src="./images/10010.jpg" alt="">
+                    <div class="product_mask"></div>
+                    <div class="item_icon">
+                        <div class="postimage">
+                            <span class="fa fa-link"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product_text">
+                    <div class="title">Port shares港口股份</div>
+                    <div class="subtitle">Port shares港口股份</div>
+                </div>
+            </li>
+            <li>
+                <div class="item_img">
+                    <img src="./images/10011.png" alt="">
+                    <div class="product_mask"></div>
+                    <div class="item_icon">
+                        <div class="postimage">
+                            <span class="fa fa-link"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product_text">
+                    <div class="title">Port shares港口股份</div>
+                    <div class="subtitle">Port shares港口股份</div>
+                </div>
+            </li>
+            <li>
+                <div class="item_img">
+                    <img src="./images/10012.jpg" alt="">
+                    <div class="product_mask"></div>
+                    <div class="item_icon">
+                        <div class="postimage">
+                            <span class="fa fa-link"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product_text">
+                    <div class="title">Port shares港口股份</div>
+                    <div class="subtitle">Port shares港口股份</div>
+                </div>
+            </li>
+            <li>
+                <div class="item_img">
+                    <img src="./images/10013.jpg" alt="">
+                    <div class="product_mask"></div>
+                    <div class="item_icon">
+                        <div class="postimage">
+                            <span class="fa fa-link"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product_text">
+                    <div class="title">Port shares港口股份</div>
+                    <div class="subtitle">Port shares港口股份</div>
+                </div>
+            </li>
+            <li>
+                <div class="item_img">
+                    <img src="./images/10014.jpg" alt="">
+                    <div class="product_mask"></div>
+                    <div class="item_icon">
+                        <div class="postimage">
+                            <span class="fa fa-link"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product_text">
+                    <div class="title">Port shares港口股份</div>
+                    <div class="subtitle">Port shares港口股份</div>
+                </div>
+            </li>
+            <li>
+                <div class="item_img">
+                    <img src="./images/10015.jpg" alt="">
+                    <div class="product_mask"></div>
+                    <div class="item_icon">
+                        <div class="postimage">
+                            <span class="fa fa-link"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product_text">
+                    <div class="title">Port shares港口股份</div>
+                    <div class="subtitle">Port shares港口股份</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- banner模块 -->
+    <div class=" banner">
+        <div class="banner_left">
+            <div class="banner_jsom">JSOM设计公司/Cool Design</div>
+            <div class="banner_num">80% of the industry leaders</div>
+            <div class="banner_text">
+                设计是把―种设想通过合理的规划、周密的计划、通过各种感觉形式传达出来的过程。人类通过劳动改造世界，创造文明，创造物质财富和精神财富，而最基础、最主要的创造活动是造物。设计便是造物活动进行预先的计划，可以把任何造物活动的计划技术和计划过程理解为设计。
+            </div>
+            <div id="more">
+                <a href="#" class="banner_more">
+                    MORE
+                    <span class="fa fa-angle-right"></span>
+                </a>
+            </div>
+        </div>
+        <div class="banner_right animated" id="banner_dom">
+            <img src="./images/10034.png" alt="">
+        </div>
+    </div>
+    <!-- 团队模块 -->
+    <div class="team">
+        <div class="component_title">
+            <div>团队</div>
+            <div>Team</div>
+        </div>
+        <div class="container">
+            <ul class="team_bottom">
+                <li>
+                    <img src="./images/10016.jpg" alt="">
+                    <div class="team_mask"></div>
+                    <div class="team_text">
+                        <div>萨玛-Sam</div>
+                        <div>网页设计师</div>
+                    </div>
+                    <div class="item_des">
+                        <p class="description">对产品进行行为设计和界面设计。 行为设计是指各种用户操作后的效果设计。Web的操作以点击为主</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="./images/10017.jpg" alt="">
+                    <div class="team_mask"></div>
+                    <div class="team_text">
+                        <div>萨玛-Sam</div>
+                        <div>网页设计师</div>
+                    </div>
+                    <div class="item_des">
+                        <p class="description">对产品进行行为设计和界面设计。 行为设计是指各种用户操作后的效果设计。Web的操作以点击为主</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="./images/10018.jpg" alt="">
+                    <div class="team_mask"></div>
+                    <div class="team_text">
+                        <div>萨玛-Sam</div>
+                        <div>网页设计师</div>
+                    </div>
+                    <div class="item_des">
+                        <p class="description">对产品进行行为设计和界面设计。 行为设计是指各种用户操作后的效果设计。Web的操作以点击为主</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="./images/10019.jpg" alt="">
+                    <div class="team_mask"></div>
+                    <div class="team_text">
+                        <div>萨玛-Sam</div>
+                        <div>网页设计师</div>
+                    </div>
+                    <div class="item_des">
+                        <p class="description">对产品进行行为设计和界面设计。 行为设计是指各种用户操作后的效果设计。Web的操作以点击为主</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 更多模块 -->
+    <div class="more">
+        <div class="mediabody">
+            <img src="./images/10020.png" alt="">
+        </div>
+        <div class="more_title">因为专业，所以更好更棒</div>
+        <div class="more_text">
+            <p>凭借多年在网站设计和开发行业的经验，JSMO引以为豪的是，我们致力于打造独特，创造性和高质量的设计，这些设计采用最新
+                的现代编码和开发技术开发，然后使用最新的结构化编码框架构建，您的开发团队可以轻松将其升级到新的水平。
+            </p>
+            <p>
+                凭借多年在网站设计和开发行业的经验，JSMO引以为豪的是，我们致力于打造独特，创造性和高质量的设计，这些设计采用最新
+                的现代编码和开发技术开发，然后使用最新的结构化编码框架构建，您的开发团队可以轻松将其升级到新的水平。
+            </p>
+        </div>
+        <div>
+            <a href="#" class="more_more">查看更多</a>
+        </div>
+    </div>
+    <!-- 新闻模块 -->
+    <div class="new">
+        <div class="container">
+            <div class="component_title">
+                <div>新闻</div>
+                <div>Best News</div>
+            </div>
+            <ul class="new_main">
+                <li>
+                    <div class="new_img">
+                        <img src="./images/10021.jpg" alt="">
+                    </div>
+                    <div class="item_wrapper clearfix">
+                        <div class="item_info ">
+                            <p class="new_title">欧美CSS画廊设计奖项首页顶部展示1月27日的最佳设计作品</p>
+                        </div>
+                        <div class="new_des"></div>
+                        <div>
+                            <p class="new_description">选出35个杰出视觉体验网站，被选其中,被收录到意大利全国工业设计协会从书中</p>
+                        </div>
+                    </div>
+                    <div class="clearfix"> </div>
+                </li>
+                <li>
+                    <div class="new_img">
+                        <img src="./images/10022.jpg" alt="">
+                    </div>
+                    <div class="item_wrapper clearfix">
+                        <div class="item_info ">
+                            <p class="new_title">2012年曾被Awwwards设计评审机构评为全球最佳CSS网站</p>
+                        </div>
+                        <div class="new_des"></div>
+                        <div>
+                            <p class="new_description">由来自8个国家的国际评审团评分，团队获此次评审的最高奖项，并颁发证书,被收录到意大利全国工业设计协会从书中</p>
+                        </div>
+                    </div>
+                    <div class="clearfix"> </div>
+                </li>
+                <li>
+                    <div class="new_img">
+                        <img src="./images/10023.png" alt="">
+                    </div>
+                    <div class="item_wrapper clearfix">
+                        <div class="item_info ">
+                            <p class="new_title">全球最佳设计：2018 iF 设计奖金奖获奖作品一览</p>
+                        </div>
+                        <div class="new_des"></div>
+                        <div>
+                            <p class="new_description">设计的任务不只是为生活和商业服务，同时也伴有艺术性的创作,被收录到意大利全国工业设计协会从书中</p>
+                        </div>
+                    </div>
+                    <div class="clearfix"> </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 赞助模块 -->
+    <div class="sponsor">
+        <ul>
+            <li><img src="./images/10024.png" alt=""></li>
+            <li><img src="./images/10025.png" alt=""></li>
+            <li><img src="./images/10026.png" alt=""></li>
+            <li><img src="./images/10027.png" alt=""></li>
+            <li><img src="./images/10028.png" alt=""></li>
+            <li><img src="./images/10029.png" alt=""></li>
+            <li><img src="./images/10030.png" alt=""></li>
+            <li><img src="./images/10031.png" alt=""></li>
+        </ul>
+    </div>
+    <!-- 地址模块 -->
+    <div class="address">
+        <div>
+            <div class="address_title">网路建设文化传播有限公司</div>
+            <div class="address_icon">
+                <a class="fa fa-weibo"></a>
+                <a class="fa fa-qq"></a>
+                <a class="fa fa-weixin"></a>
+            </div>
+        </div>
+        <div>
+            <div>地址：中国地区XX分区5A写字楼8-88室</div>
+            <div>电话：400-888-8888</div>
+            <div>传真：000-66668888</div>
+        </div>
+        <div>
+            <div>邮编：100000</div>
+            <div>手机：188-6666-5188</div>
+            <div>邮箱：0008008@qq.com</div>
+        </div>
+    </div>
+    <!-- 底部 -->
+    <div class="footer">
+        COPYRIGHT (©) 2022 mo005_17795 - 企业集团类网站.
+    </div>
+    <!-- 自己的js文件 -->
+    <script src="js/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		.result {
+			padding: 20px;
+			border: 2px solid orange;
+			min-height: 50px;
+		}
+
+		button {
+			padding: 10px;
+			margin-left: 10px;
+		}
+
+		.btn {
+			padding: 0;
+			margin: 0;
+		}
+	</style>
+</head>
+
+<body>
+	<pre>
+		题目：
+			在本页面黄色框中生成10个button,并绑定click事件，点击<button class="btn">button</button>分别弹出1~10（数字代表每一个button的序号）
+	</pre>
+	<div class="result" id="result">
+
+	</div>
+	<script type="text/javascript">
+		var div = document.querySelector('#result')
+		var oBtn = document.querySelector('.btn')
+		oBtn.addEventListener('click', () => {
+			for (let i = 1; i <= 10; i++) {
+				let oBtn = document.createElement('button')
+				oBtn.innerText = i
+				oBtn.onclick = function () {
+					console.log(this.innerText);
+				}
+
+				setTimeout(() => {
+					div.appendChild(oBtn)
+					console.log(i);
+				}, 1000 * i);
+			}
+		})
+	</script>
+</body>
+
+</html>

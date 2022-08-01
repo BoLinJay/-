@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.num {
+				padding: 7px;
+				text-align: center;
+			}
+
+			.button {
+				padding: 6px 20px;
+				font-size: 14px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<fieldset id="">
+			<legend>递增，递减</legend>
+			<form>
+				<p>
+					<button id="up" class="button" type="button">+</button>
+					<input id="count" class="num" type="text" value="">
+					<button id="down" class="button" type="button">-</button>
+				</p>
+			</form>
+			<script type="text/javascript">
+				// 查找元素
+				var oUp = document.getElementById('up');
+				var oDown = document.getElementById('down');
+				var oCount = document.getElementById('count');
+
+				// 绑定事件
+				oUp.onclick = function() {
+					// 获取当前count值
+					var count = parseFloat(oCount.value);
+					//判断是否是数字
+					if (!count) {
+						alert('请输入合法的数字！');
+						// 清空value
+						oCount.value = '';
+						return false;
+					}
+					// 累加1
+					count++;
+					// 赋值value
+					oCount.value = count;
+				}
+				oDown.onclick = function() {
+					// 获取当前count值
+					var count = oCount.value;
+					// 判断是否为空
+					if (!count) {
+						alert('数字不能为空！')
+					}
+					if (count > 1) {
+						count--;
+					}
+					// 赋值value
+					oCount.value = count;
+				}
+			</script>
+		</fieldset>
+
+	</body>
+
+</html>

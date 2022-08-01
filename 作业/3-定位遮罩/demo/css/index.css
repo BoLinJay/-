@@ -1,0 +1,37 @@
+body, html {
+  background: url(../images/psd15763_05.jpg);
+}
+
+.container {
+  text-align: center;
+}
+
+.container .shop {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.container .shop .box {
+  position: relative;
+  width: 290px;
+  height: 420px;
+  margin: 2px 0;
+}
+
+.container .shop .box span {
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 288px;
+  height: 79px;
+  color: #fff;
+  background-color: #000;
+  text-align: center;
+}
+
+.container .shop .box span a {
+  color: red;
+}

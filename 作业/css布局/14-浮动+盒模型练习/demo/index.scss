@@ -1,0 +1,184 @@
+.center {
+    width: 980px;
+    margin: 0 auto;
+}
+
+.top {
+    margin-top: 20px;
+}
+
+.box {
+    height: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+
+    aside {
+        width: 300px;
+        height: 172px;
+
+        .typeOne {
+            height: 15px;
+            font-family: MicrosoftYaHei;
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 15px;
+            color: #000000;
+        }
+
+        .mianOne {
+            display: flex;
+            height: 86px;
+
+            .textOne {
+                width: 156px;
+                font-family: SimSun;
+                font-size: 12px;
+                font-weight: normal;
+                line-height: 18px;
+                color: #000000;
+                padding-left: 20px;
+                margin: 0 0 10px 0;
+            }
+
+            .Learn {
+                height: 9px;
+                font-family: ArialMT;
+                font-size: 12px;
+                font-weight: normal;
+                line-height: 25px;
+                color: #002646;
+                padding-left: 20px;
+            }
+        }
+
+        .footerOne {
+            height: 30px;
+
+            ul {
+                padding-left: 0;
+
+                li {
+                    font-family: SimSun;
+                    font-size: 10px;
+                    font-weight: normal;
+                    line-height: 18px;
+                    color: #000000;
+                    list-style: none;
+                }
+            }
+        }
+
+        .typeTwo {
+            height: 15px;
+            font-family: MicrosoftYaHei;
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 22px;
+            color: #000000;
+        }
+
+        .mainTwo {
+            display: flex;
+            width: 295px;
+            height: 150px;
+            flex-wrap: wrap;
+
+            div {
+                &:first-child {
+                    width: 290px;
+                    height: 60px;
+
+                    span {
+                        &:last-child {
+                            float: right;
+                            width: 165px;
+                            line-height: 17px;
+                            font-family: SimSun;
+                            font-size: 12px;
+                            font-weight: normal;
+                            color: #000000;
+                        }
+                    }
+
+                }
+
+                &:last-child {
+                    width: 290px;
+                    height: 70px;
+
+                    span {
+                        &:last-child {
+                            float: right;
+                            width: 165px;
+                            line-height: 17px;
+                            font-family: SimSun;
+                            font-size: 12px;
+                            font-weight: normal;
+                            color: #000000;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .typeThree {
+            height: 15px;
+            font-family: MicrosoftYaHei;
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 22px;
+            color: #000000;
+        }
+
+        .footerThree {
+            font-family: SimSun;
+            font-size: 10px;
+            font-weight: normal;
+            color: #002646;
+            margin-top: 7px;
+        }
+    }
+}
+
+footer {
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    section {
+        display: flex;
+        width: 980px;
+        height: 40px;
+        line-height: 40px;
+        padding: 0 10px;
+        box-sizing: border-box;
+        justify-content: space-between;
+
+        .footerBar {
+            width: 250px;
+            display: flex;
+            justify-content: space-between;
+
+            span {
+                font-size: 10px;
+
+                &:nth-child(-n+3) {
+                    &::after {
+                        content: '|';
+                        margin-left: 8px;
+                    }
+                }
+            }
+        }
+
+        .Authorship {
+            font-family: ArialMT;
+            font-size: 11px;
+            font-weight: normal;
+            color: #b1b1b1;
+        }
+    }
+}

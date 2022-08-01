@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script>
+			//1、 简单数据类型判断---typeof
+			var a = 3.14;
+			var b = '3.14';
+
+			console.log('变量a：%s', typeof a);
+		</script>
+		<script type="text/javascript">
+			// 2、引用数据类型判断---instanceof
+			var person = {
+				name: '黄小米',
+				age: 20,
+			}
+			// 猜第一次
+			console.log(person instanceof Array);
+			// 猜第二次
+			console.log(person instanceof Function);
+			// 猜第三次
+			console.log(person instanceof Object);
+
+			/* 借助于console判断类型
+			 * number类型：蓝色
+			 * string类型：黑色
+			 * boolean类型：蓝色
+			 * null、undefined类型：灰色
+			 */
+		</script>
+		<script>
+			// 字符 => 数字
+			var a = '10';
+			var b = parseInt(x);
+			var c = parseFloat(x);
+			var d = Number(x);
+			// 数字 => 字符
+			var m = 20;
+			var n = m.toString();
+			var l = String(m);
+			// 布尔值 => 数字
+			var valid = true;
+			var correct = Number(valid); //1
+
+			var inValid = false;
+			var incorrect = Number(inValid); //0
+			// 数字 => 布尔
+			var p = 4;
+			var r = -4;
+			var s = Boolean(p); //true
+			var t = Boolean(r); //true
+		</script>
+	</body>
+</html>

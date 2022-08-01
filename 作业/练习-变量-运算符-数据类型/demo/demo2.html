@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>型号: <input type="text" id="type" placeholder="请输入汽油型号，例如：92"> </div>
+    <div>数量: <input type="text" id="num"> </div>
+    <button type="button" id="oBtn">计算价格</button>
+    <script>
+        var type = document.querySelector('#type')
+        var num = document.querySelector('#num')
+        var oBtn = document.querySelector('#oBtn')
+        oBtn.onclick = () => {
+            let typeV = +(type.value)
+            if (typeV !== 92 && typeV !== 97) {
+                alert('请输入92或97好汽油')
+                return
+            }
+            let numV = num.value
+            let price = (typeV === 92 ? (numV <= 20 ? 6 * numV : 5 * numV) : (numV <= 30 ? 7 * numV : 5.5 * numV))
+            console.log(price + '元');
+        }
+    </script>
+</body>
+
+</html>

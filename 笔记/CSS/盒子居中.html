@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子居中5中方法</title>
+</head>
+<style>
+    /* 定位+transform方法 */
+    .dingwei {
+        position: relative;
+        width: 1000px;
+        height: 300px;
+        border: 1px solid #000;
+    }
+    .dingwei_box {
+        position:absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+    }
+    /* 定位+margin方法 */
+    .margin {
+        position: relative;
+        width: 1000px;
+        height: 300px;
+        border: 1px solid #000;
+    }
+    .margin_box {
+        position:absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -50px;
+        margin-top: -50px;
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+    }
+    /* 定位+margin:auto;居中方法 */
+    .auto {
+        position: relative;
+        width: 1000px;
+        height: 300px;
+        border: 1px solid #000;
+    }
+    .auto_box {
+        position:absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+    }
+</style>
+
+<body>
+    <!-- 定位+transform -->
+    <div class="dingwei">
+        <div class="dingwei_box"></div>
+    </div>  
+    <!-- 定位+margin -->
+    <div class="margin">
+        <div class="margin_box"></div>
+    </div> 
+    <!-- 定位+margin:auto; -->
+    <div class="auto">
+        <div class="auto_box"></div>
+    </div> 
+</body>
+</html>

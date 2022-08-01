@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            padding: 5px 10px;
+        }
+
+        .box {
+            float: left;
+            margin: 10px;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            font-size: 36px;
+            border-radius: 32px;
+            background: #ffffff;
+            box-shadow: inset -5px -5px 12px #666666,
+                inset 5px 5px 12px #ffffff;
+            transition: all 1s;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .animation_1 {
+            opacity: .7;
+        }
+
+        .animation_2 {
+            transform: rotateY(180deg);
+        }
+
+        .animation_3 {
+            transform: scale(.8);
+        }
+    </style>
+</head>
+
+<body>
+    <h3>完成下列需求：</h3>
+    <ol>
+        <li>在页面里生成 100 个 div，每个 div 宽 100px，高 100px，div里面是 1-100 自身序号，10 行 10 列排列</li>
+        <li>背景颜色按
+            <button type="button" value="red">红</button>
+            <button type="button" value="yellow">黄</button>
+            <button type="button" value="blue">蓝</button>
+            <button type="button" value="green">绿</button>
+            交替变色
+        </li>
+        <li>点击每一个div之后，触发动画，透明度降低至70%，沿着Y轴旋转180度，同时整体缩小至80%，再次点击还原！</li>
+        <li><b style="color: red;">附加题目：</b> 点击整个窗口空白区域，重置所有缩小的div状态</li>
+
+    </ol>
+
+
+    <script>
+        // 生成盒子
+        for (let i = 1; i <= 100; i++) {
+            var div = document.createElement('div')
+            div.classList.add('box')
+            // 选出11,21,31...的盒子
+            if (!(i % 10)) {
+                var j = i + 1
+            }
+            // 加清除浮动属性实现换行
+            if (j === i) {
+                div.classList.add('clear')
+            }
+            // 序号
+            div.innerText = i
+            document.body.append(div)
+        }
+        // 变换背景颜色
+        var BtnAll = document.querySelectorAll('button')
+        BtnAll.forEach(item => {
+            item.onclick = () => {
+                document.body.style['background-color'] = item.value
+                // 排他思想
+                BtnAll.forEach((ele) => {
+                    ele.style['background-color'] = ''
+                })
+                item.style['background-color'] = item.value
+            }
+        })
+        // 点击div实现动画
+        var DivAll = document.querySelectorAll('div')
+        DivAll.forEach((item) => {
+            var off = true
+            item.onclick = () => {
+                if (off) {
+                    item.classList.add('animation_1')
+                    setTimeout(() => {
+                        item.classList.add('animation_2')
+                    }, 0);
+                    setTimeout(() => {
+                        item.classList.add('animation_3')
+                    }, 1000);
+                    off = false
+                } else {
+                    item.classList.remove('animation_1')
+                    item.classList.remove('animation_2')
+                    setTimeout(() => {
+                        item.classList.remove('animation_3')
+                    }, 500);
+                    off = true
+                }
+            }
+        })
+        // 点击空白区域，重置所有div
+        window.onclick = (e) => {
+            if (e.target.localName !== 'div') {
+                DivAll.forEach((item) => {
+                    item.classList.remove('animation_1')
+                    item.classList.remove('animation_2')
+                    setTimeout(() => {
+                        item.classList.remove('animation_3')
+                    }, 500);
+                })
+            }
+        }
+    </script>
+</body>
+
+</html>

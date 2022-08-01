@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .num {
+            text-align: center;
+            padding: 7px;
+        }
+
+        button {
+            padding: 6px 20px;
+            font-size: 16px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <button type="button" id="oBtnAdd">+</button>
+    <input type="text" id="input" class="num">
+    <button type="button" id="oBtnReduce">-</button>
+    <script>
+        var oBtnAdd = document.querySelector('#oBtnAdd')
+        var oBtnReduce = document.querySelector('#oBtnReduce')
+        var input = document.querySelector('#input')
+        oBtnAdd.onclick = function () {
+            var value = +input.value.trim()
+            var type = typeof value
+            if (isNaN(value) === true) {
+                alert('请重新输入数字')
+                return
+            }
+            input.value++
+        }
+    </script>
+</body>
+
+</html>

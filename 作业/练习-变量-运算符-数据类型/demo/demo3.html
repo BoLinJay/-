@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>数字1：<input type="text" id="num1"></div>
+    <div>数字2：<input type="text" id="num2"></div>
+    <div>数字3：<input type="text" id="num3"></div>
+    <button type="button" id="oBtn">计算最大值</button>
+
+    <script>
+        var num1 = document.querySelector('#num1')
+        var num2 = document.querySelector('#num2')
+        var num3 = document.querySelector('#num3')
+        var oBtn = document.querySelector('#oBtn')
+        oBtn.onclick = () => {
+            let arr = [+num1.value, +num2.value, +num3.value]
+            let max = arr[0]
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] > max) max = arr[i]
+            }
+            console.log(max);
+        }
+    </script>
+</body>
+
+</html>
