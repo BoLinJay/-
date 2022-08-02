@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <span>添加：</span>
+            <input type="text" placeholder="姓名" class="input_name">
+            <input type="text" placeholder="年龄" class="input_age">
+            <button type="button" class="button_add">添加</button>
+            <span>变色:</span>
+            <button type="button" class="button_color">开启变色</button>
+        </div>
+        <div class="form">
+            <form action="#">
+                <table class="border">
+                    <thead>
+                        <tr>
+                            <th class="table_id">Id</th>
+                            <th class="table_name">姓名</th>
+                            <th class="table_age">年龄</th>
+                            <th class="table_action">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody class="tbody">
+                        <!-- <tr id="form_tr">
+                            <td id="id">1</td>
+                            <td id="name">张三</td>
+                            <td id="age">33</td>
+                            <td id="remove"><a href="javascript:;">删除</a></td>
+                        </tr>
+                        <tr id="form_tr">
+                            <td id="id">1</td>
+                            <td id="name">张三</td>
+                            <td id="age">33</td>
+                            <td id="remove"><a href="javascript:;">删除</a></td>
+                        </tr> -->
+                    </tbody>
+                </table>
+            </form>
+        </div>
+        <div class="search">
+            <span>搜索：</span>
+            <input type="text" placeholder="姓名" class="input_search">
+            <button type="button" class="button_search">搜索</button>
+            <span>排序：</span>
+            <button type="button" class="button_sort">年龄从小排序</button>
+        </div>
+    </div>
+    <script>
+        const data = [{
+                id: 1,
+                name: '张三',
+                age: 33,
+            },
+            {
+                id: 2,
+                name: '李四',
+                age: 43,
+            },
+            {
+                id: 3,
+                name: '王五',
+                age: 63,
+            },
+            {
+                id: 4,
+                name: '赵六',
+                age: 13,
+            },
+            {
+                id: 5,
+                name: '小红',
+                age: 23,
+            },
+            {
+                id: 6,
+                name: '大明',
+                age: 3,
+            },
+        ]
+        var oAdd = document.querySelector('.button_add')
+        var oTbody = document.querySelector('.tbody')
+        var oInputName = document.querySelector('.input_name')
+        var oInputAge = document.querySelector('.input_age')
+        var oRemove = document.querySelectorAll('a')
+        var oTr = document.querySelectorAll('tr')
+        // 初始化
+        window.onload = () => {
+            // 渲染DOM
+            render()
+            // 绑定删除事件
+            clear()
+        }
+        oAdd.onclick = () => {
+            // 添加数组
+            addClick()
+            // 清空DOM
+            clearList()
+            // 渲染DOM
+            render()
+            // 绑定删除事件
+            clear()
+        }
+        // 绑定删除事件
+        const clear = () => {
+            // 添加删除事件
+            var oRemove = document.querySelectorAll('a')
+            for (let i = 0; i < oRemove.length; i++) {
+                oRemove[i].onclick = function () {
+                    this.parentNode.parentNode.remove()
+                }
+            }
+        }
+        // 向数组添加数据
+        const addClick = () => {
+            let name = oInputName.value
+            let age = oInputAge.value
+            if (!(name && age)) {
+                alert('请先输入姓名和年龄')
+                return
+            }
+            let formData = {
+                id: data.length + 1,
+                name,
+                age,
+            }
+            data.push(formData)
+        }
+        // 清空DOM
+        const clearList = () => {
+            var oRemove = document.querySelectorAll('a')
+            oRemove.forEach(item => {
+                item.parentNode.parentNode.remove()
+            })
+        }
+        // 渲染DOM
+        const render = () => {
+            data.forEach(item => {
+                var tr = document.createElement('tr')
+                tr.innerHTML = `
+                <tr>
+                <td>${item.id}</td>
+                <td>${item.name}</td>
+                <td>${item.age}</td>
+                <td><a href='javascript:;'>删除</td>
+                </tr>`
+                oTbody.append(tr)
+            })
+        }
+
+        // // // 绑定删除事件
+        // const clear = () => {
+        //     // // 添加删除事件
+        //     var oRemove = document.querySelectorAll('a')
+        //     for (let i = 0; i < oRemove.length; i++) {
+        //         oRemove[i].onclick = function () {
+        //             this.parentNode.parentNode.remove()
+        //         }
+        //     }
+        // }
+        // let id = oTr.length - 1
+        // oAdd.onclick = () => {
+        //     if (!(oInputName.value && oInputAge.value)) {
+        //         alert('请先输入姓名和年龄')
+        //         return
+        //     }
+        //     id++
+        //     let name = oInputName.value
+        //     let age = oInputAge.value
+        //     var tr = document.createElement('tr')
+        //     tr.innerHTML = `
+        // <tr>
+        // <td>${id}</td>
+        // <td>${name}</td>
+        // <td>${age}</td>
+        // <td><a href='javascript:;'>删除</td>
+        // </tr>`
+        //     oTbody.append(tr)
+        //     // 删除
+        //     clear()
+        // }
+    </script>
+</body>
+
+</html>
