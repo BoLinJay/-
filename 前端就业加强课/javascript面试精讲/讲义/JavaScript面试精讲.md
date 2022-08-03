@@ -392,7 +392,7 @@ parseInt(12.98) //12
       var arr = ["1", "2", "3", "4"];
       var result = arr.map(parseInt);
       console.log(result);
-    </script>
+ </script>
 ```
 
 执行上面程序得到的结果是：`[1,NaN,NaN,NaN]`

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+	<fieldset id="">
+		<legend>计算器</legend>
+		<input type="text" name="" id="num1" value="" /> *
+		<input type="text" name="" id="num2" value="" />
+		<button type="button" id="cal">计算</button>
+		<script type="text/javascript">
+
+		</script>
+	</fieldset>
+
+	<fieldset>
+		<legend>计算总价</legend>
+		<table id="table" width="100%" cellpadding="20" border="1">
+			<thead>
+				<tr>
+					<th>id</th>
+					<th>书名</th>
+					<th>作者</th>
+					<th>价格</th>
+					<th>数量</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>西游记</td>
+					<td>吴承恩</td>
+					<td class="money">40.5</td>
+					<td class="num">1</td>
+					<td><button type="button">x</button></td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>红楼梦</td>
+					<td>曹雪芹</td>
+					<td class="money">35.1</td>
+					<td class="num">3</td>
+					<td><button type="button">x</button></td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>水浒传</td>
+					<td>施耐庵</td>
+					<td class="money">40.7</td>
+					<td class="num">3</td>
+					<td><button type="button">x</button></td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>三国演义</td>
+					<td>罗贯中</td>
+					<td class="money">53.4</td>
+					<td class="num">2</td>
+					<td><button type="button">x</button></td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			总共：<span class="numTotal"></span> 本书，总价：<span class="total"></span>元
+		</p>
+		<script type="text/javascript">
+			var moneys = document.querySelectorAll('.money')
+			var nums = document.querySelectorAll('.num')
+			var numTotal = document.querySelector('.numTotal')
+			var total = document.querySelector('.total')
+			var removeButton = document.querySelectorAll('button')
+			window.onload = () => {
+				computed()
+			}
+			const computed = () => {
+				var count = 0
+				var totalNum = 0
+				total.innerText = ''
+				numTotal.innerText = ''
+				console.log(nums[0].innerText);
+				for (let i = 0; i < moneys.length; i++) {
+					totalNum += (moneys[i].innerText * nums[i].innerText)
+					count += (+nums[i].innerText)
+				}
+				console.log(count);
+				total.innerText = totalNum.toFixed(2)
+				numTotal.innerText = count
+			}
+			removeButton.forEach((item) => {
+				item.addEventListener('click', function () {
+					this.parentNode.parentNode.remove()
+					computed()
+				})
+			})
+		</script>
+	</fieldset>
+</body>
+
+</html>
