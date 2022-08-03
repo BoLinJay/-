@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    <pre>
+			数组 arr=[1,2,3,4,5,6,2,3,3,3,3,4,4,4,4,5,5,5,23,2,2,3,4,6,1,5,8,7,9,7,6,1,2,2,5,7,8,4,9]
+			1、编写一个函数，去除重复的数字，输出去重之后的数组
+            2、将重复的数字打印出来，包括重复次数
+		</pre>
+    <script type="text/javascript">
+        var arr = [1, 2, 3, 4, 5, 6, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 23, 2, 2, 3, 4, 6, 1, 5, 8, 7, 9, 7, 6, 1, 2,
+            2, 5, 7, 8, 4, 9
+        ]
+
+        function unique(arr) {
+            // 在此处写代码...
+            const newArr = []
+            let json = {}
+            arr.forEach((item) => {
+                if (newArr.indexOf(item) === -1) {
+                    newArr.push(item)
+                    json[item] = 1
+                } else {
+                    json[item]++
+                }
+            })
+            for (let key in json) {
+                console.log(`重复数字为${key},重复次数为:${json[key]}`);
+            }
+            return newArr
+        }
+        // unique(arr)
+        var res = unique(arr);
+        console.log(res);
+    </script>
+</body>
+
+</html>

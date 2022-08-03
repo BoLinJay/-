@@ -117,9 +117,9 @@
         var oInputName = document.querySelector('.input_name')
         var oInputAge = document.querySelector('.input_age')
         var oRemove = document.querySelectorAll('a')
-        var oTr = document.querySelectorAll('tr')
         var buttonColor = document.querySelector('.button_color')
         var oBorder = document.querySelector('.border')
+        var oTr = document.querySelectorAll('tr')
         // 初始化
         window.onload = () => {
             // 渲染DOM
@@ -130,15 +130,16 @@
             clear()
             // 变色按钮
             offColor()
-            mouseoutForm()
         }
         // 变色开关
         const offColor = () => {
-            var state = true
+            let state = true
+            let oTr = document.querySelectorAll('tr')
             // 开启
             buttonColor.addEventListener('click', () => {
                 if (state) {
-                    addColor()
+                    addColor(oTr)
+                    mouseoutForm()
                     buttonColor.innerText = '关闭变色'
                     state = false
                     return
@@ -154,14 +155,16 @@
         // 变色模式
         const changeColor = (e) => {
             // 排他思想
+            let oTr = document.querySelectorAll('tr')
             oTr.forEach((item) => {
                 item.style['background-color'] = ''
             })
             e.target.style['background-color'] = 'pink'
         }
         // 添加变色事件
-        const addColor = () => {
-            oTr.forEach((item, i) => {
+        const addColor = (oTr) => {
+            console.log(oTr);
+            oTr.forEach((item) => {
                 item.addEventListener('mouseenter', changeColor)
             })
         }
@@ -173,13 +176,16 @@
         }
         // 移出表格
         const mouseoutForm = () => {
-            oBorder.addEventListener('mouseout', () => {
+            oBorder.addEventListener('mouseleave', () => {
                 console.log(33);
                 oTr.forEach((item) => {
                     item.style['background-color'] = ''
                 })
             })
         }
+
+
+
         // // 绑定删除事件
         const clear = () => {
             // // 添加删除事件
@@ -201,7 +207,7 @@
                 id++
                 let name = oInputName.value
                 let age = oInputAge.value
-                var tr = document.createElement('tr')
+                let tr = document.createElement('tr')
                 tr.innerHTML = `
                    <tr>
                        <td>${id}</td>
@@ -210,8 +216,11 @@
                        <td><a href='javascript:;'>删除</td>
                    </tr>`
                 oTbody.append(tr)
+                const oTr = document.querySelectorAll('tr')
                 // 删除
                 clear()
+                // 添加变色事件
+                addColor(oTr)
             }
         }
 
