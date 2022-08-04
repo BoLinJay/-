@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 反转字符串 demo1
+        function reverseString(str) {
+            return str.split('').reverse().join('')
+        }
+        console.log(reverseString('abcdef'));
+        // demo2
+        const arr = Array.from('abcdefg')
+        console.log(arr.reverse().join(''));
+        // demo3  使用charAt()
+        function reverseString2(str) {
+            let newStr = ''
+            for (let i = str.length - 1; i >= 0; i--) {
+                newStr += str.charAt(i)
+            }
+            return newStr
+        }
+        console.log(reverseString2('abcdefg'));
+
+
+
+        // 字符串中找出重复的字符最多的字符并统计重复个数
+        // demo1
+        function getMaxCount(str) {
+            let json = {}
+            const arr = []
+            str.split('').forEach((item) => {
+                if (arr.indexOf(item) === -1) {
+                    arr.push(item)
+                    json[item] = 1
+                } else {
+                    json[item]++
+                }
+            })
+            console.log(json);
+            let maxString = ''
+            let count = 0
+            for (let key in json) {
+                if (json[key] > count) {
+                    count = json[key]
+                    maxString = key
+                }
+            }
+            console.log(`出现最多的字符串:${maxString},出现的次数${count}`);
+        }
+        getMaxCount('javascriptjavascripttttaaassssssssss')
+
+        // demo2
+        function getMaxString2(str) {
+            let json = {}
+            for (let i = 0; i < str.length; i++) {
+                if (!json[str.charAt(i)]) {
+                    json[str.charAt(i)] = 1
+                } else {
+                    json[str.charAt(i)]++
+                }
+            }
+            let maxString = ''
+            let count = 0
+            for (let key in json) {
+                if (json[key] > count) {
+                    maxString = json[key]
+                    count = key
+                }
+            }
+            console.log(`出现最多的字符串:${maxString},出现的次数${count}`)
+        }
+        getMaxString2('aaaaaaaaaaabcddd')
+        // 去除字符串中重复字符
+        // demo1
+        function removeRepeatChar(str) {
+            const arr = []
+            let json = {}
+            for (let i = 0; i < str.length; i++) {
+                const res = str.charAt(i)
+                if (!json[res]) {
+                    json[res] = true
+                    arr.push(res)
+                }
+            }
+            console.log(arr.join(''));
+        }
+        removeRepeatChar('aaaaaaaaaaabcddd')
+        // demo2
+        function removeRepeatChar2(str) {
+            const arr = str.split('')
+            const newArr = new Set(arr)
+            console.log([...newArr].join(''));
+        }
+        removeRepeatChar2('aaaaaaaaaaabcddd')
+        // 判断是否是回文字符串
+        function palindromeString(str) {
+            str = str.toLowerCase()
+            const arr = str.split('')
+            let reverseStr = arr.reverse().join('')
+            if (str === reverseStr) {
+                console.log(true);
+            } else {
+                console.log(false);
+            }
+        }
+        palindromeString('abcba')
+    </script>
+</body>
+
+</html>

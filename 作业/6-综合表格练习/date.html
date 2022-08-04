@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 class="time"></h1>
+    <h3>星期<span class="week"></span></h3>
+    <script>
+        window.onload = () => {
+            clock();
+            setInterval(clock, 1000)
+        }
+        // 定时器id
+        var timer;
+        // 处理位数
+        function handleNum(num) {
+            return num >= 10 ? num : '0' + num
+        }
+        // 处理星期
+        function handleWeek(week) {
+            switch (week) {
+                case 1:
+                    return '一'
+                case 2:
+                    return '二'
+                case 3:
+                    return '三'
+                case 4:
+                    return '四'
+                case 5:
+                    return '五'
+                case 6:
+                    return '六'
+                case 7:
+                    return '日'
+            }
+        }
+
+        function clock() {
+            // 获取当前时间
+            var now = new Date();
+            // 年
+            var year = now.getFullYear();
+            // 月
+            var month = handleNum(now.getMonth() + 1);
+            // 日
+            var date = handleNum(now.getDate());
+            // 时
+            var hour = handleNum(now.getHours());
+            // 分钟
+            var min = handleNum(now.getMinutes());
+            // 秒
+            var sec = handleNum(now.getSeconds());
+            // 星期几
+            var day = handleWeek(now.getDay());
+            // 时钟当前时间
+            var time = `${year}-${month}-${date} ${hour}:${min}:${sec}`;
+
+            var oTime = document.querySelector('.time');
+            var oDay = document.querySelector('.week')
+            oTime.innerText = time;
+            oDay.innerText = day
+        }
+    </script>
+</body>
+
+</html>

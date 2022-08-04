@@ -35,37 +35,37 @@
                         <tr id="form_tr">
                             <td id="id">1</td>
                             <td id="name">张三</td>
-                            <td id="age">33</td>
+                            <td id="age">133</td>
                             <td id="remove"><a href="javascript:;">删除</a></td>
                         </tr>
                         <tr id="form_tr">
                             <td id="id">2</td>
                             <td id="name">张三</td>
-                            <td id="age">33</td>
+                            <td id="age">333</td>
                             <td id="remove"><a href="javascript:;">删除</a></td>
                         </tr>
                         <tr id="form_tr">
                             <td id="id">3</td>
                             <td id="name">张三</td>
-                            <td id="age">33</td>
+                            <td id="age">383</td>
                             <td id="remove"><a href="javascript:;">删除</a></td>
                         </tr>
                         <tr id="form_tr">
                             <td id="id">4</td>
                             <td id="name">张三</td>
-                            <td id="age">33</td>
+                            <td id="age">3</td>
                             <td id="remove"><a href="javascript:;">删除</a></td>
                         </tr>
                         <tr id="form_tr">
                             <td id="id">5</td>
                             <td id="name">张三</td>
-                            <td id="age">33</td>
+                            <td id="age">13</td>
                             <td id="remove"><a href="javascript:;">删除</a></td>
                         </tr>
                         <tr id="form_tr">
                             <td id="id">6</td>
                             <td id="name">张三</td>
-                            <td id="age">33</td>
+                            <td id="age">23</td>
                             <td id="remove"><a href="javascript:;">删除</a></td>
                         </tr>
                     </tbody>
@@ -120,6 +120,7 @@
         var buttonColor = document.querySelector('.button_color')
         var oBorder = document.querySelector('.border')
         var oTr = document.querySelectorAll('tr')
+        var oButtonSort = document.querySelector('.button_sort')
         // 初始化
         window.onload = () => {
             // 渲染DOM
@@ -130,6 +131,8 @@
             clear()
             // 变色按钮
             offColor()
+            // 排序
+            sort()
         }
         // 变色开关
         const offColor = () => {
@@ -183,9 +186,6 @@
                 })
             })
         }
-
-
-
         // // 绑定删除事件
         const clear = () => {
             // // 添加删除事件
@@ -223,7 +223,29 @@
                 addColor(oTr)
             }
         }
+        // 排序
+        const sort = () => {
+            const arr = []
+            oButtonSort.addEventListener('click', () => {
+                // 获取所有tr
+                var oTr = oTbody.querySelectorAll("tr");
+                for (var i = 0; i < oTbody.rows.length; i++) {
+                    arr[i] = oTbody.rows[i];
+                }
+                // 排序
+                arr.sort((sage1, sage2) => {
+                    var n1 = +(sage1.cells[2].innerHTML);
+                    var n2 = +(sage2.cells[2].innerHTML);
 
+                    return n1 - n2;
+                })
+                console.log(arr);
+                // 重新渲染DOM
+                for (var i = 0; i < arr.length; i++) {
+                    oTbody.appendChild(arr[i])
+                }
+            })
+        }
 
 
 

@@ -670,7 +670,7 @@ console.log(arr.reverse().join(""))
         var result = "";
         for (var i = str.length - 1; i >= 0; i--) {
           result += str.charAt(i);
-        }
+        }		
         return result;
       }
       console.log(reverseString2("abcdef"));
@@ -742,7 +742,7 @@ console.log(arr.reverse().join(""))
           var charCount = str.lastIndexOf(char) - i + 1;
           //与次数最大值进行比较
           if (charCount > maxCount) {
-            //更新maxCount与maxCountChar的值
+            //更新maxCount与maxCountChar的值hg
             maxCount = charCount;
             maxCountChar = char;
           }
@@ -2589,9 +2589,9 @@ for(var i=0;i<arr.length;i++){
 
 在使用函数前，先需要对函数进行定义。关于函数的定义总体上可以分为三类。
 
-第一类是函数声明。
+第一类是`函数声明`。
 
-第二类是函数表达式
+第二类是`函数表达式`
 
 第三类是通过`Function`构造函数来完成函数的定义。
 
@@ -2696,7 +2696,7 @@ var sum = function (num1,num2){
 ```js
       console.log(add(1, 2)); // 3
       console.log(sum(3, 6)); // Uncaught TypeError: sum is not a function
-      // 函数声明
+      // 函数声明    存在函数提升
       function add(num1, num2) {
         return num1 + num2;
       }
@@ -10711,3 +10711,4 @@ Set结构是一个类似数组的结构，那么怎样转换成一个真正的�
         console.log(Array.from(s));
 ```
 
+4    
