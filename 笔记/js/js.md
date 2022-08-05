@@ -78,6 +78,8 @@ var function say() {
 
 - `Array.isArray(数据)`判断是否是数组
 
+- `includes()`查看是否在数组中
+
 - > `arr.reduce(callback(preValue, currentValue[, index[, array]])[, initialValue])`
   >
   > - `preValue`累计器累计回调的返回值; 它是上一次调用回调时返回的累积值，或`initialValue`
